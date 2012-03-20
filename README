@@ -1,0 +1,14 @@
+Sample use of an android project skeleton
+(c) Author: Marcos Lopez - dev@scidentify.info / scidentifyweb@gmail.com
+
+Used for priceswagger, and basic init for json processing and rest
+
+This public source goes as far as receiving the JSON data, and returning back to the PriceSwaggerActivity class, but does not
+perform any behavior with this data. It is useful for a basic android application structure, reference or a basic starting point
+
+on an Android platform. 
+
+
+
+
+

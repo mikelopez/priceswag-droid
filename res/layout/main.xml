@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+		android:weightSum="1">
+		<ImageView android:layout_height="wrap_content" android:src="@drawable/logo_mobile2" android:id="@+id/imageView1" android:layout_width="fill_parent"></ImageView>
+		<LinearLayout android:background="#1558A7" android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_weight="0.30">
+			<LinearLayout android:layout_weight="0.07" android:layout_height="wrap_content" android:orientation="vertical" android:layout_width="fill_parent" android:id="@+id/linearLayout1"></LinearLayout>
+			<TextView android:layout_width="wrap_content" android:text="@string/intro_text" android:textColor="#dddddd" android:id="@+id/search_type_text_view" android:layout_gravity="center" android:layout_height="wrap_content" android:layout_weight="0.07"></TextView>
+			<EditText android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/search_phrase" android:width="220dip" android:id="@+id/search_edit_text" android:layout_gravity="center"></EditText>
+			<Button android:layout_height="wrap_content" android:layout_width="78dp" android:text="@string/search" android:id="@+id/search_button" android:layout_gravity="center"></Button>
+			<LinearLayout android:layout_height="wrap_content" android:layout_width="50dp" android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_weight="0.13"></LinearLayout>
+		</LinearLayout>
+</LinearLayout>

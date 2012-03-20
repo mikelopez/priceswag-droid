@@ -1,0 +1,76 @@
+package com.priceswagger.apps.pricecompare;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class PriceSwaggerAppActivity extends Activity {
+    /** Called when the activity is first created. */
+		private static final String EMPTY_STRING = "";
+
+		/* define them widget bitches */
+		private EditText searchEditText;
+		private TextView searchTypeTextView;
+		private Button searchButton;
+
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+				this.findAllViewsById();
+				searchButton.setOnClickListener(new OnClickListener() {
+					public void onClick(View v) {
+						String query = searchEditText.getText().toString();
+						longToast(query);
+					}
+
+				});
+
+				searchEditText.setOnFocusChangeListener(new DftTextOnFocusListener(getString(R.string.search_phrase)));
+				searchTypeTextView.setText("Searching for " + searchEditText.getText().toString());
+
+    }
+
+		private void findAllViewsById() {
+			/* this function is called and sets these variables used by oncreate and other functions */
+			searchEditText = (EditText) findViewById(R.id.search_edit_text);
+			searchTypeTextView = (TextView) findViewById(R.id.search_type_text_view);
+			searchButton = (Button) findViewById(R.id.search_button);
+		}
+
+		public void longToast(CharSequence message) {
+			Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+		}
+
+
+		private class DftTextOnFocusListener implements OnFocusChangeListener {
+			private String defaultText;
+
+			public DftTextOnFocusListener(String defaultText) {
+				this.defaultText = defaultText;
+			}
+			public void onFocusChange(View v, boolean hasFocus) {
+				if (v instanceof EditText) {
+					EditText focusedEditText = (EditText) v;
+					if (hasFocus) {
+						if (focusedEditText.getText().toString().equals(defaultText)) {
+							focusedEditText.setText(EMPTY_STRING);
+						}
+					}
+					else {
+						if (focusedEditText.getText().toString().equals(EMPTY_STRING)) {
+							focusedEditText.setText(defaultText);
+						}
+					}
+				}
+			}
+		}
+
+}
